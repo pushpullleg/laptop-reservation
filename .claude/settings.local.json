@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(npx create-react-app *)",
+      "Bash(node index.js)",
+      "Bash(curl -s http://localhost:3001/api/inventory)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(ls /Users/mukeshravichandran/Desktop/Reservation/.claude/ 2>/dev/null || mkdir -p /Users/mukeshravichandran/Desktop/Reservation/.claude)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s -X POST http://localhost:3001/api/reservations -H 'Content-Type: application/json' -d '{\"name\":\"Jane Smith\",\"email\":\"jane@university.edu\",\"color\":\"Blue\"}')",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -s -X POST http://localhost:3001/api/reservations -H 'Content-Type: application/json' -d '{\"name\":\"Jane Smith\",\"email\":\"jane@university.edu\",\"color\":\"Yellow\"}')",
+      "Bash(curl -s \"http://localhost:3001/api/admin/reservations?password=admin123\")",
+      "Bash(curl -s \"http://localhost:3001/api/admin/reservations?password=wrong\")",
+      "Bash(chmod +x /Users/mukeshravichandran/Desktop/Reservation/start.sh)",
+      "Bash(cat /tmp/cra.log | tail -30)",
+      "Bash(pkill -f \"node index.js\")",
+      "Bash(curl -s -X POST http://localhost:3001/api/check-email -H 'Content-Type: application/json' -d '{\"email\":\"stranger@gmail.com\"}')",
+      "Bash(curl -s -X POST http://localhost:3001/api/check-email -H 'Content-Type: application/json' -d '{\"email\":\"faculty01@university.edu\"}')",
+      "Bash(curl -s -X POST http://localhost:3001/api/check-email -H 'Content-Type: application/json' -d '{\"email\":\"jane@university.edu\"}')",
+      "Bash(curl -s -X POST http://localhost:3001/api/reservations -H 'Content-Type: application/json' -d '{\"name\":\"Dr. Lee\",\"email\":\"faculty02@university.edu\",\"color\":\"Yellow\"}')",
+      "Bash(curl -s -X POST http://localhost:3001/api/check-email -H 'Content-Type: application/json' -d '{\"email\":\"faculty02@university.edu\"}')",
+      "Bash(curl -s -X POST http://localhost:3001/api/admin/faculty?password=admin123 -H 'Content-Type: application/json' -d '{\"emails\":\"faculty01@university.edu\\\\nfaculty02@university.edu\\\\nfaculty03@university.edu\"}')",
+      "Bash(curl -s \"http://localhost:3001/api/admin/faculty?password=admin123\")",
+      "Bash(git init *)",
+      "Bash(git branch *)"
+    ]
+  }
+}
