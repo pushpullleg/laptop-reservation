@@ -156,10 +156,13 @@ export default function LandingPage({ onAdminClick }) {
           <h1 className="lp-success-title">🎉 Your claim has been<br/>successfully recorded!</h1>
           <p className="lp-success-sub">Thank you for submitting your reservation request.</p>
           <div className="lp-success-card">
-            <p>Our team has received your information and will review your eligibility shortly.</p>
-            <p style={{ marginTop: '0.75rem' }}>You will receive further communication through your faculty email.</p>
+            <p>Our team has noted the claim request and will review your eligibility shortly.</p>
+            <p style={{ marginTop: '0.75rem' }}>You will receive further communication through your staff email.</p>
           </div>
-          <div className="lp-success-badge">✅ Reservation successfully noted.</div>
+          <div className="lp-success-badge">✅ Claim successfully noted.</div>
+          <button className="lp-close-tab-btn" onClick={() => window.close()}>
+            Close Tab
+          </button>
         </div>
       </div>
     );
@@ -174,7 +177,7 @@ export default function LandingPage({ onAdminClick }) {
       {/* ── Deadline banner ── */}
       <div className="lp-deadline">
         <span className="lp-deadline-dot" />
-        <span>Claim by <strong>Friday, June 13</strong> — Limited availability</span>
+        <span>Claim by <strong>Friday, June 13 at 5:00 PM</strong> — Limited availability</span>
       </div>
 
       {/* ── Nav — logo only, no text ── */}
@@ -187,7 +190,7 @@ export default function LandingPage({ onAdminClick }) {
       <section className="lp-hero">
         <p className="lp-hero-eyebrow">New</p>
         <h1 className="lp-hero-title">MacBook Neo</h1>
-        <p className="lp-hero-sub">Claim yours today.</p>
+        <p className="lp-hero-sub">Claim yours!</p>
         <div className="lp-specs">
           <span>13‑inch Display</span>
           <span className="lp-spec-dot">·</span>
@@ -213,7 +216,7 @@ export default function LandingPage({ onAdminClick }) {
       <section className="lp-choose-section" style={{ '--color-bg': COLOR_META[color].bg }}>
         <p className="lp-choose-eyebrow">Step 1</p>
         <h2 className="lp-choose-title">Choose your colour</h2>
-        <p className="lp-choose-sub">Select the finish you'd like to reserve.</p>
+        <p className="lp-choose-sub">Select the finish you'd like to claim.</p>
 
         {/* Big colour cards */}
         <div className="lp-color-cards">
@@ -303,7 +306,7 @@ export default function LandingPage({ onAdminClick }) {
             <strong style={{ color: COLOR_META[color].dot === '#c8e23a' ? '#6a7c00' : '#4a5fa5' }}>
               {color}
             </strong>{' '}
-            finish. Enter your faculty email to confirm.
+            finish. Enter your staff email to confirm.
           </p>
 
           <form onSubmit={handleClaim} noValidate>
@@ -324,8 +327,12 @@ export default function LandingPage({ onAdminClick }) {
               </div>
             </div>
 
-            {emailState === 'error' && <p className="lp-field-error">{emailError}</p>}
-            {emailState === 'ok'    && <p className="lp-field-ok">Email verified — you're on the approved list.</p>}
+            {/* Fixed-height status line — prevents layout shift while typing */}
+            <p className={`lp-field-msg ${emailState === 'error' ? 'is-error' : ''} ${emailState === 'ok' ? 'is-ok' : ''}`}>
+              {emailState === 'error' ? emailError
+                : emailState === 'ok' ? 'Email verified — you\'re on the approved staff list.'
+                : ' ' /* non-breaking space keeps height */}
+            </p>
 
             <button
               className="lp-claim-btn"
@@ -340,7 +347,7 @@ export default function LandingPage({ onAdminClick }) {
             </button>
 
             {emailState === 'idle' && email === '' && (
-              <p className="lp-input-hint">Only approved faculty emails are accepted.</p>
+              <p className="lp-input-hint">Only approved staff emails are accepted.</p>
             )}
           </form>
 
@@ -356,7 +363,7 @@ export default function LandingPage({ onAdminClick }) {
       {/* ── Footer ── */}
       <footer className="lp-footer">
         <img src={ETAMU_LOGO} alt="East Texas A&M" className="lp-footer-logo" />
-        <p>© 2026 East Texas A&M University Faculty Laptop Programme.</p>
+        <p>© 2026 East Texas A&M University Staff Laptop Programme.</p>
         <p className="lp-footer-credits">
           Built by <strong>Mukesh Ravichandran</strong> &nbsp;·&nbsp; Admin <strong>Dr. Sherece Shavel</strong>
         </p>
@@ -364,7 +371,7 @@ export default function LandingPage({ onAdminClick }) {
           <a href="https://www.apple.com/macbook-neo/" target="_blank" rel="noopener noreferrer" className="lp-footer-link">
             Apple MacBook Neo
           </a>
-          {' '}&nbsp;·&nbsp; For approved faculty only.
+          {' '}&nbsp;·&nbsp; For approved staff only.
         </p>
       </footer>
 
