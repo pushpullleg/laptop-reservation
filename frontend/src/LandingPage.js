@@ -173,7 +173,7 @@ export default function LandingPage({ onAdminClick }) {
       {/* ── Deadline banner ── */}
       <div className="lp-deadline">
         <span className="lp-deadline-dot" />
-        <span>Claim by <strong>Monday, June 16 at 5:00 PM</strong> — Limited availability</span>
+        <span>Claim by <strong>5pm on Monday, June 16</strong> — Limited availability</span>
       </div>
 
       {/* ── Nav — logo only, no text ── */}
