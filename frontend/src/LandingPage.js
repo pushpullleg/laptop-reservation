@@ -31,7 +31,6 @@ const ETAMU_LOGO = `${BASE}/images/etamu/etamu-logo.png`;
 export default function LandingPage({ onAdminClick }) {
   const [color, setColor]         = useState('Citrus');
   const [slide, setSlide]         = useState(0);
-  const [animDir, setAnimDir]     = useState(null);
   const [inventory, setInventory] = useState({ citrus: null, indigo: null });
 
   const [email, setEmail]           = useState('');
@@ -61,8 +60,7 @@ export default function LandingPage({ onAdminClick }) {
 
   /* ── Carousel auto-advance ── */
   const nextSlide = useCallback(() => {
-    setAnimDir('left');
-    setTimeout(() => { setSlide(s => (s + 1) % images.length); setAnimDir(null); }, 300);
+    setSlide(s => (s + 1) % images.length);
   }, [images.length]);
 
   useEffect(() => {
@@ -72,15 +70,14 @@ export default function LandingPage({ onAdminClick }) {
 
   const goSlide = (idx) => {
     clearInterval(autoRef.current);
-    setAnimDir(idx > slide ? 'left' : 'right');
-    setTimeout(() => { setSlide(idx); setAnimDir(null); }, 300);
+    setSlide(idx);
     autoRef.current = setInterval(nextSlide, 4000);
   };
 
   const switchColor = (c) => {
     if (c === color) return;
-    setAnimDir('color');
-    setTimeout(() => { setColor(c); setSlide(0); setAnimDir(null); }, 250);
+    setColor(c);
+    setSlide(0);
   };
 
   /* ── Email validation (debounced) ── */
@@ -156,10 +153,9 @@ export default function LandingPage({ onAdminClick }) {
           <h1 className="lp-success-title">🎉 Your claim has been<br/>successfully recorded!</h1>
           <p className="lp-success-sub">Thank you for submitting your reservation request.</p>
           <div className="lp-success-card">
-            <p>Our team has noted the claim request and will review your eligibility shortly.</p>
+            <p>Our team has noted the claim request.</p>
             <p style={{ marginTop: '0.75rem' }}>You will receive further communication through your staff email.</p>
           </div>
-          <div className="lp-success-badge">✅ Claim successfully noted.</div>
           <button className="lp-close-tab-btn" onClick={() => window.close()}>
             Close Tab
           </button>
@@ -274,13 +270,16 @@ export default function LandingPage({ onAdminClick }) {
 
       {/* ── Gallery ── */}
       <section className="lp-gallery-section">
-        <div className={`lp-gallery-img-wrap ${animDir ? `anim-${animDir}` : ''}`}>
-          <img
-            key={`${color}-${slide}`}
-            src={images[slide]}
-            alt={`MacBook Neo ${color}`}
-            className="lp-gallery-img"
-          />
+        {/* Fixed-size container — all images stacked, active one fades in */}
+        <div className="lp-gallery-stage">
+          {images.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt={`MacBook Neo ${color} view ${i + 1}`}
+              className={`lp-gallery-img ${i === slide ? 'active' : ''}`}
+            />
+          ))}
         </div>
         <div className="lp-gallery-dots">
           {images.map((_, i) => (
