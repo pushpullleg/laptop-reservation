@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 
-const API = 'http://localhost:3001';
+const API = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 const socket = io(API, { autoConnect: true });
 
 // Steps: 'email' → 'details' → 'success'
