@@ -118,6 +118,136 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ══════════════════════════════════════
+   Colour-choice section (Step 1)
+══════════════════════════════════════ */
+.lp-choose-section {
+  background: var(--color-bg, #f8fce8);
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+  transition: background 0.4s ease;
+}
+.lp-choose-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6e6e73;
+  margin-bottom: 0.5rem;
+}
+.lp-choose-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: #1d1d1f;
+  margin-bottom: 0.5rem;
+}
+.lp-choose-sub {
+  font-size: 1rem;
+  color: #6e6e73;
+  margin-bottom: 2rem;
+}
+
+/* Big colour-choice cards */
+.lp-color-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.lp-color-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 160px;
+  padding: 1.5rem 1rem 1.25rem;
+  background: white;
+  border: 2px solid #e5e5ea;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  font-family: inherit;
+}
+.lp-color-card:hover:not(:disabled) {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+.lp-color-card.selected {
+  border-color: #1d1d1f;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.14);
+}
+.lp-color-card.sold-out { opacity: 0.45; cursor: not-allowed; }
+
+.lp-card-swatch {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.lp-card-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+.lp-card-stock {
+  font-size: 0.75rem;
+  color: #6e6e73;
+}
+.lp-card-stock.out { color: #ff3b30; }
+.lp-card-check {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  font-size: 0.85rem;
+  color: #34c759;
+  font-weight: 700;
+}
+
+/* Small swatches row (secondary) */
+.lp-swatch-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+.lp-swatch {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  transition: border-color 0.2s;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+}
+.lp-swatch.active { border-color: #1d1d1f; }
+.lp-swatch-dot { width: 100%; height: 100%; border-radius: 50%; }
+
+/* Scroll-to-claim CTA */
+.lp-choose-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #1d1d1f;
+  color: white;
+  border: none;
+  border-radius: 980px;
+  padding: 0.7rem 1.6rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.lp-choose-cta:hover { background: #3a3a3c; transform: translateY(-1px); }
+
 /* ── Gallery ── */
 .lp-gallery-section {
   background: #f5f5f7;
@@ -165,64 +295,7 @@
   transform: scale(1.3);
 }
 
-/* ── Color selector ── */
-.lp-color-section {
-  background: #f5f5f7;
-  padding: 1.25rem 2rem 3rem;
-  text-align: center;
-}
-.lp-color-label {
-  font-size: 0.9rem;
-  color: #6e6e73;
-  margin-bottom: 1rem;
-}
-.lp-color-swatches {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 0.6rem;
-}
-.lp-swatch {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  background: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3px;
-  transition: border-color 0.2s;
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
-}
-.lp-swatch.active { border-color: #1d1d1f; }
-.lp-swatch-dot {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-.lp-color-names {
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem;
-  margin-top: 0.4rem;
-}
-.lp-color-name {
-  font-size: 0.8rem;
-  color: #aeaeb2;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.lp-color-name.active { color: #1d1d1f; font-weight: 500; }
-
-.lp-avail {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-}
-.lp-avail-count { color: #1d1d1f; }
-.lp-avail-count strong { color: #0071e3; }
-.lp-avail-none { color: #ff3b30; }
+/* (old .lp-color-section removed — replaced by .lp-choose-section above) */
 
 /* ── Form section ── */
 .lp-form-section {
@@ -292,8 +365,9 @@
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-.lp-field-error { font-size: 0.82rem; color: #ff3b30; text-align: left; margin-bottom: 0.75rem; padding-left: 0.2rem; }
-.lp-field-ok    { font-size: 0.82rem; color: #34c759; text-align: left; margin-bottom: 0.75rem; padding-left: 0.2rem; }
+.lp-field-error  { font-size: 0.82rem; color: #ff3b30; text-align: left; margin-bottom: 0.75rem; padding-left: 0.2rem; }
+.lp-field-ok     { font-size: 0.82rem; color: #34c759; text-align: left; margin-bottom: 0.75rem; padding-left: 0.2rem; }
+.lp-input-hint   { font-size: 0.78rem; color: #aeaeb2; text-align: center; margin-top: 0.75rem; }
 
 /* CTA button */
 .lp-claim-btn {
@@ -351,6 +425,11 @@
   border-top: 1px solid #d2d2d7;
   padding: 2.5rem 2rem;
   text-align: center;
+  font-size: 0.8rem;
+  color: #6e6e73;
+}
+.lp-footer-credits {
+  margin-top: 0.5rem;
   font-size: 0.8rem;
   color: #6e6e73;
 }
