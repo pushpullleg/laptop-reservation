@@ -42,7 +42,7 @@
   top: 0;
   z-index: 100;
 }
-.lp-nav-logo { color: #1d1d1f; display: flex; align-items: center; }
+.lp-nav-logo-img { height: 28px; width: auto; object-fit: contain; }
 .lp-nav-title { font-size: 0.9rem; font-weight: 500; color: #1d1d1f; letter-spacing: -0.01em; }
 .lp-nav-admin {
   background: none;
@@ -99,6 +99,19 @@
   animation: fade-up 0.6s 0.3s ease both;
 }
 .lp-spec-dot { color: #c7c7cc; }
+
+/* "Learn more" link under hero specs */
+.lp-learn-more {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 0.92rem;
+  color: #0071e3;
+  text-decoration: none;
+  transition: opacity 0.15s;
+  animation: fade-up 0.6s 0.4s ease both;
+}
+.lp-learn-more:hover { opacity: 0.75; }
+.lp-chevron { font-style: normal; }
 
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(16px); }
@@ -319,6 +332,19 @@
   display: inline-block;
 }
 
+/* "Want to know more" under the form */
+.lp-form-learn {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  color: #6e6e73;
+  text-align: center;
+}
+.lp-form-learn a {
+  color: #0071e3;
+  text-decoration: none;
+}
+.lp-form-learn a:hover { text-decoration: underline; }
+
 /* ── Footer ── */
 .lp-footer {
   background: #f5f5f7;
@@ -328,6 +354,15 @@
   font-size: 0.8rem;
   color: #6e6e73;
 }
+.lp-footer-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  opacity: 0.75;
+}
+.lp-footer-link { color: #6e6e73; text-decoration: none; }
+.lp-footer-link:hover { text-decoration: underline; }
 
 /* ── Success page ── */
 .lp-success-page {
@@ -367,6 +402,15 @@
 }
 @keyframes stroke {
   100% { stroke-dashoffset: 0; }
+}
+
+/* ETAMU logo on success screen */
+.lp-success-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 2rem;
+  opacity: 0.85;
 }
 
 .lp-success-check { margin-bottom: 1.5rem; }
