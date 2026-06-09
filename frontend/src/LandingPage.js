@@ -151,9 +151,9 @@ export default function LandingPage({ onAdminClick }) {
             </svg>
           </div>
           <h1 className="lp-success-title">🎉 Your claim has been<br/>successfully recorded!</h1>
-          <p className="lp-success-sub">Thank you for submitting your reservation request.</p>
+          <p className="lp-success-sub">Thank you for submitting your claim.</p>
           <div className="lp-success-card">
-            <p>Our team has noted the claim request.</p>
+            <p>Our team has recorded the claim request.</p>
             <p style={{ marginTop: '0.75rem' }}>You will receive further communication through your staff email.</p>
           </div>
           <button className="lp-close-tab-btn" onClick={() => window.close()}>
@@ -173,7 +173,7 @@ export default function LandingPage({ onAdminClick }) {
       {/* ── Deadline banner ── */}
       <div className="lp-deadline">
         <span className="lp-deadline-dot" />
-        <span>Claim by <strong>Friday, June 13 at 5:00 PM</strong> — Limited availability</span>
+        <span>Claim by <strong>Monday, June 16 at 5:00 PM</strong> — Limited availability</span>
       </div>
 
       {/* ── Nav — logo only, no text ── */}
@@ -186,7 +186,7 @@ export default function LandingPage({ onAdminClick }) {
       <section className="lp-hero">
         <p className="lp-hero-eyebrow">New</p>
         <h1 className="lp-hero-title">MacBook Neo</h1>
-        <p className="lp-hero-sub">Claim yours!</p>
+        <p className="lp-hero-sub">Claim Yours Today!</p>
         <div className="lp-specs">
           <span>13‑inch Display</span>
           <span className="lp-spec-dot">·</span>
@@ -211,7 +211,7 @@ export default function LandingPage({ onAdminClick }) {
       ══════════════════════════════════ */}
       <section className="lp-choose-section" style={{ '--color-bg': COLOR_META[color].bg }}>
         <p className="lp-choose-eyebrow">Step 1</p>
-        <h2 className="lp-choose-title">Choose your colour</h2>
+        <h2 className="lp-choose-title">Choose your color</h2>
         <p className="lp-choose-sub">Select the finish you'd like to claim.</p>
 
         {/* Big colour cards */}
