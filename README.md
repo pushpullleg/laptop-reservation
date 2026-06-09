@@ -56,14 +56,6 @@ The application will be available at `http://localhost:3000`
 
 We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-### Contribution Tracking
-
-**Contribution #1**
-- **Student:** Mukesh Ravichandran
-- **Status:** [Phase I / Phase II / Phase III / Phase IV] [In Progress]
-- **Issue:** [GitHub issue link]
-- **Documentation:** [Update with contribution details as work progresses]
-
 ## Usage
 
 ### For Faculty
@@ -94,9 +86,6 @@ We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for 
 **Issue:** Port 3000 already in use
 - Change port: `PORT=3001 npm start`
 
-## License
-
-[Add your license here - e.g., MIT, GPL, etc.]
 
 ## Support
 
