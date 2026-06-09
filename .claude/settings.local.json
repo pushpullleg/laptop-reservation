@@ -25,7 +25,18 @@
       "Bash(curl -s -X POST http://localhost:3001/api/admin/faculty?password=admin123 -H 'Content-Type: application/json' -d '{\"emails\":\"faculty01@university.edu\\\\nfaculty02@university.edu\\\\nfaculty03@university.edu\"}')",
       "Bash(curl -s \"http://localhost:3001/api/admin/faculty?password=admin123\")",
       "Bash(git init *)",
-      "Bash(git branch *)"
+      "Bash(git branch *)",
+      "Bash(git rm *)",
+      "Bash(rm -rf frontend/.git)",
+      "Bash(git add *)",
+      "Bash(rm -rf /Users/mukeshravichandran/Desktop/Reservation/frontend/.git *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git remote *)",
+      "Bash(npm run *)",
+      "Bash(find /Users/mukeshravichandran/Desktop -name \"citrus\" -o -name \"indigo\" -o -name \"Citrus\" -o -name \"Indigo\" 2>/dev/null | head -10)",
+      "Bash(cp /Users/mukeshravichandran/Desktop/Reservation/Citrus/*.webp /Users/mukeshravichandran/Desktop/Reservation/frontend/public/images/citrus/)",
+      "Bash(cp /Users/mukeshravichandran/Desktop/Reservation/Indigo/*.webp /Users/mukeshravichandran/Desktop/Reservation/frontend/public/images/indigo/)"
     ]
   }
 }

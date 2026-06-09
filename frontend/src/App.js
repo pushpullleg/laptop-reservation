@@ -1,36 +1,26 @@
 import { useState } from 'react';
-import FacultyPortal from './FacultyPortal';
+import LandingPage from './LandingPage';
 import AdminPortal from './AdminPortal';
 import './App.css';
 
 export default function App() {
-  const [view, setView] = useState('faculty');
+  const [view, setView] = useState('landing');
 
-  return (
-    <div className="app-shell">
-      <header className="header">
-        <div className="header-inner">
-          <h1 className="logo">🖥️ Laptop Reservation</h1>
-          <nav className="nav">
-            <button
-              className={`nav-btn ${view === 'faculty' ? 'active' : ''}`}
-              onClick={() => setView('faculty')}
-            >
-              Reserve
-            </button>
-            <button
-              className={`nav-btn ${view === 'admin' ? 'active' : ''}`}
-              onClick={() => setView('admin')}
-            >
-              Admin
-            </button>
-          </nav>
+  if (view === 'admin') {
+    return (
+      <div>
+        <div style={{ background: '#f5f5f7', borderBottom: '1px solid #d2d2d7', padding: '0.75rem 2rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <button onClick={() => setView('landing')} style={{ background: 'none', border: 'none', color: '#0071e3', fontSize: '0.9rem', cursor: 'pointer', fontFamily: 'inherit' }}>
+            ← Back to page
+          </button>
+          <span style={{ color: '#6e6e73', fontSize: '0.9rem' }}>Admin Dashboard</span>
         </div>
-      </header>
+        <div style={{ padding: '2rem 1.5rem' }}>
+          <AdminPortal />
+        </div>
+      </div>
+    );
+  }
 
-      <main className="main">
-        {view === 'faculty' ? <FacultyPortal /> : <AdminPortal />}
-      </main>
-    </div>
-  );
+  return <LandingPage onAdminClick={() => setView('admin')} />;
 }
