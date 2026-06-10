@@ -121,6 +121,9 @@ export default function AdminPortal() {
   const blueReserved = reservations.filter(r => r.color === 'Blue').length;
   const yellowReserved = reservations.filter(r => r.color === 'Yellow').length;
 
+  // Display names: Blue = Citrus, Yellow = Indigo
+  const colorLabel = (c) => c === 'Blue' ? 'Citrus' : c === 'Yellow' ? 'Indigo' : c;
+
   // ---------- Dashboard ----------
   return (
     <div className="admin-wrap">
@@ -148,11 +151,11 @@ export default function AdminPortal() {
           <div className="stats-row">
             <div className="stat-card blue">
               <div className="num">{inventory.blue ?? '—'}</div>
-              <div className="lbl">Blue Remaining</div>
+              <div className="lbl">Citrus Remaining</div>
             </div>
             <div className="stat-card yellow">
               <div className="num">{inventory.yellow ?? '—'}</div>
-              <div className="lbl">Yellow Remaining</div>
+              <div className="lbl">Indigo Remaining</div>
             </div>
             <div className="stat-card total">
               <div className="num">{total}</div>
@@ -160,11 +163,11 @@ export default function AdminPortal() {
             </div>
             <div className="stat-card">
               <div className="num" style={{ color: '#1d4ed8' }}>{blueReserved}</div>
-              <div className="lbl">Blue Reserved</div>
+              <div className="lbl">Citrus Reserved</div>
             </div>
             <div className="stat-card">
               <div className="num" style={{ color: '#a16207' }}>{yellowReserved}</div>
-              <div className="lbl">Yellow Reserved</div>
+              <div className="lbl">Indigo Reserved</div>
             </div>
           </div>
 
@@ -193,7 +196,7 @@ export default function AdminPortal() {
                       <td style={{ color: '#9ca3af', fontSize: '0.8rem' }}>LP-{r.id}</td>
                       <td>{r.name}</td>
                       <td>{r.email}</td>
-                      <td><span className={`badge ${r.color.toLowerCase()}`}>{r.color}</span></td>
+                      <td><span className={`badge ${r.color.toLowerCase()}`}>{colorLabel(r.color)}</span></td>
                       <td style={{ color: '#6b7280', fontSize: '0.82rem' }}>{new Date(r.reserved_at + 'Z').toLocaleString()}</td>
                       <td><button className="btn-danger" onClick={() => cancelReservation(r.id)}>Cancel</button></td>
                     </tr>
