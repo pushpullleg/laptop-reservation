@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/laptop-reservation/static/css/main.deb498ae.css",
-    "main.js": "/laptop-reservation/static/js/main.2088715f.js",
+    "main.css": "/laptop-reservation/static/css/main.4e8262a1.css",
+    "main.js": "/laptop-reservation/static/js/main.82b772bf.js",
     "static/js/453.20359781.chunk.js": "/laptop-reservation/static/js/453.20359781.chunk.js",
     "index.html": "/laptop-reservation/index.html",
-    "main.deb498ae.css.map": "/laptop-reservation/static/css/main.deb498ae.css.map",
-    "main.2088715f.js.map": "/laptop-reservation/static/js/main.2088715f.js.map",
+    "main.4e8262a1.css.map": "/laptop-reservation/static/css/main.4e8262a1.css.map",
+    "main.82b772bf.js.map": "/laptop-reservation/static/js/main.82b772bf.js.map",
     "453.20359781.chunk.js.map": "/laptop-reservation/static/js/453.20359781.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.deb498ae.css",
-    "static/js/main.2088715f.js"
+    "static/css/main.4e8262a1.css",
+    "static/js/main.82b772bf.js"
   ]
 }
