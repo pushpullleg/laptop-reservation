@@ -9,9 +9,9 @@
 .stat-card { flex: 1; min-width: 130px; background: white; border-radius: 10px; padding: 1rem 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.07); text-align: center; }
 .stat-card .num { font-size: 2rem; font-weight: 700; }
 .stat-card .lbl { font-size: 0.78rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.2rem; }
-.stat-card.blue .num { color: #1d4ed8; }
-.stat-card.yellow .num { color: #a16207; }
-.stat-card.total .num { color: #065f46; }
+.stat-card.citrus .num { color: #5a7c00; }
+.stat-card.indigo .num  { color: #3730a3; }
+.stat-card.total .num   { color: #065f46; }
 .table-wrap { background: white; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); overflow: hidden; }
 table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 thead { background: #f9fafb; border-bottom: 1.5px solid #e5e7eb; }
@@ -20,8 +20,8 @@ td { padding: 0.85rem 1rem; border-bottom: 1px solid #f3f4f6; }
 tr:last-child td { border-bottom: none; }
 tr:hover td { background: #f9fafb; }
 .badge { display: inline-block; padding: 0.2rem 0.65rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
-.badge.blue { background: #dbeafe; color: #1d4ed8; }
-.badge.yellow { background: #fef9c3; color: #92400e; }
+.badge.blue,   .badge.citrus { background: #ecfccb; color: #3f6212; }
+.badge.yellow, .badge.indigo { background: #e0e7ff; color: #3730a3; }
 .btn-danger { background: transparent; border: 1px solid #fca5a5; color: #dc2626; border-radius: 6px; padding: 0.3rem 0.7rem; font-size: 0.8rem; cursor: pointer; transition: all 0.15s; font-family: inherit; }
 .btn-danger:hover { background: #fee2e2; }
 .btn-danger:disabled { opacity: 0.4; cursor: not-allowed; }
